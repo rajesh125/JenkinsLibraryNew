@@ -20,8 +20,6 @@ agent any
   }
    stage('checkout'){
      steps {
-      
-       echo "checkout workspace print"
        CheckOut(branch: props["branch"] , scmUrl: props["repo"]) 
     
      }
@@ -34,7 +32,7 @@ agent any
        }
       }
     }
-    stage('Junit Testing') {
+    stage('Testing') {
        steps {
         withMaven(maven: 'jenkinsmaven'){
           TestingJunit()
